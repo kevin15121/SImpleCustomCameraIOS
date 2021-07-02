@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IPi-Mc-QmR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AuthMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Preview" id="BYZ-38-t0r" customClass="ViewController" customModule="AuthMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="74"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="qcT-Iv-Ldb">
+            <objects>
+                <viewController id="IPi-Mc-QmR" customClass="StartViewController" customModule="AuthMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PeM-RE-oBB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae6-ix-fK5" userLabel="Photo View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4GI-eS-pNH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeW-fm-J5q">
+                                        <rect key="frame" x="157" y="746" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="LbP-UM-Dw9"/>
+                                            <constraint firstAttribute="width" constant="100" id="Veq-mi-I5z"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4GI-eS-pNH" secondAttribute="trailing" id="0dw-JH-kCb"/>
+                                    <constraint firstItem="zeW-fm-J5q" firstAttribute="centerX" secondItem="ae6-ix-fK5" secondAttribute="centerX" id="KW9-fM-3VG"/>
+                                    <constraint firstAttribute="bottom" secondItem="4GI-eS-pNH" secondAttribute="bottom" id="Tpu-6I-jmS"/>
+                                    <constraint firstItem="4GI-eS-pNH" firstAttribute="top" secondItem="ae6-ix-fK5" secondAttribute="top" id="ZPW-7F-E9r"/>
+                                    <constraint firstAttribute="bottom" secondItem="zeW-fm-J5q" secondAttribute="bottom" constant="50" id="b9a-mO-kfh"/>
+                                    <constraint firstItem="4GI-eS-pNH" firstAttribute="leading" secondItem="ae6-ix-fK5" secondAttribute="leading" id="xAX-J3-GEL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vO8-i9-KTV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ae6-ix-fK5" firstAttribute="top" secondItem="PeM-RE-oBB" secondAttribute="top" id="XHq-Pz-Ey4"/>
+                            <constraint firstAttribute="bottom" secondItem="ae6-ix-fK5" secondAttribute="bottom" id="ng0-Oi-bLw"/>
+                            <constraint firstAttribute="trailing" secondItem="ae6-ix-fK5" secondAttribute="trailing" id="qdV-0x-uZI"/>
+                            <constraint firstItem="ae6-ix-fK5" firstAttribute="leading" secondItem="PeM-RE-oBB" secondAttribute="leading" id="s4f-Ns-L34"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="4GI-eS-pNH" id="yDW-Da-Ffc"/>
+                        <outlet property="startButton" destination="zeW-fm-J5q" id="5FR-9g-q0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALG-1G-rUa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-449" y="719"/>
         </scene>
     </scenes>
     <resources>

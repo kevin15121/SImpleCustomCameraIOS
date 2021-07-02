@@ -19,21 +19,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var takePhotoButton: UIButton!
     @IBOutlet weak var backToPreviewButton: UIButton!
     @IBOutlet weak var previewUIView: UIView!
-    var viewModel:ViewModel!
+    var viewModel:PreviewViewModel!
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.contentMode = .scaleAspectFit
-        viewModel = ViewModel(cameraController: CameraController())
         viewModel.viewStatus
             .subscribe(onNext:handleDisplayStatus)
             .disposed(by:disposeBag)
-        viewModel.image
-            .bind(to: imageView.rx.image)
-            .disposed(by: disposeBag)
         viewModel.prepareCamera()
         setupButtonEvents()
+    }
+    func bindViewModel(viewModel:PreviewViewModel){
+        self.viewModel = viewModel
     }
     func setupButtonEvents(){
         takePhotoButton.rx.tap.subscribe(onNext:{

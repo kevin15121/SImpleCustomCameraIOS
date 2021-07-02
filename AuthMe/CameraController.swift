@@ -68,7 +68,9 @@ extension CameraController:CameraProtocol{
         return Single<Void>.create{
             single -> Disposable in
             func createCaptureSession() {
+                if self.captureSession == nil{
                 self.captureSession = AVCaptureSession()
+                }
             }
             
             func configureCaptureDevices() throws {
@@ -125,6 +127,9 @@ extension CameraController:CameraProtocol{
             
             DispatchQueue(label: "prepare").async {
                 do {
+                    if let session = self.captureSession,session.isRunning{
+                        single(.success(()))
+                    }
                     createCaptureSession()
                     try configureCaptureDevices()
                     try configureDeviceInputs()
